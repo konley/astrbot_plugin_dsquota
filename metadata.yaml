@@ -1,0 +1,5 @@
+name: astrbot_plugin_dsquota
+desc: 查询 DeepSeek 账户余额，触发指令 /dsquota，支持定时播报与低余额阶梯告警
+version: 0.1.0
+author: konley
+display_name: DeepSeek 余额查询

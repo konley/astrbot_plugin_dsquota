@@ -1,0 +1,62 @@
+{
+  "api_key": {
+    "description": "DeepSeek API Key（用于查询余额，请填写 sk- 开头的 Bearer Token）",
+    "type": "string",
+    "hint": "在 DeepSeek 开放平台获取：https://platform.deepseek.com/api_keys"
+  },
+  "admin_only": {
+    "description": "仅 AstrBot 框架管理员可调用 /dsquota 指令",
+    "type": "bool",
+    "hint": "开启后普通用户不可查询"
+  },
+  "schedule_enable": {
+    "description": "定时播报余额（默认关闭，需配合以下 schedule 参数使用）",
+    "type": "bool",
+    "hint": "开启后按 Cron 表达式将余额播报推给目标用户/群"
+  },
+  "schedule_cron": {
+    "description": "定时播报 Cron 表达式",
+    "type": "string",
+    "hint": "例：0 9 * * * 表示每天早上 9 点"
+  },
+  "schedule_target_type": {
+    "description": "推送目标类型（定时播报和阶梯告警共用）",
+    "type": "string",
+    "hint": "group 或 private"
+  },
+  "schedule_target_id": {
+    "description": "推送目标 ID（定时播报和阶梯告警共用）",
+    "type": "string",
+    "hint": "群聊填群号，私聊填 QQ 号"
+  },
+  "schedule_platform": {
+    "description": "推送平台实例 ID（可留空自动检测）",
+    "type": "string",
+    "hint": "如 aiocqhttp，留空自动查找"
+  },
+  "monitor_enable": {
+    "description": "后台轮询监控余额，低于阶梯档位时自动告警",
+    "type": "bool",
+    "hint": "开启后每 10 分钟检查一次余额"
+  },
+  "monitor_interval": {
+    "description": "监控检查间隔（分钟）",
+    "type": "number",
+    "hint": "默认 10 分钟"
+  },
+  "monitor_alarm_thresholds": {
+    "description": "告警阶梯档位（元），逗号分隔递减",
+    "type": "string",
+    "hint": "例：20,10,5,1 表示余额跌破 20→10→5→1 时各告警一次"
+  },
+  "timeout": {
+    "description": "HTTP 请求超时时间（秒）",
+    "type": "number",
+    "hint": "默认 30"
+  },
+  "report_title": {
+    "description": "播报标题",
+    "type": "string",
+    "hint": "默认 'DeepSeek 余额播报'"
+  }
+}
