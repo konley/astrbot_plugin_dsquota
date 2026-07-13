@@ -41,7 +41,7 @@
   },
   "monitor_interval": {
     "description": "监控检查间隔（分钟）",
-    "type": "number",
+    "type": "float",
     "hint": "默认 10 分钟"
   },
   "monitor_alarm_thresholds": {
